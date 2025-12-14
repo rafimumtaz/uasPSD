@@ -19,7 +19,7 @@ Termasuk visualisasi **Waveform** dan **Spectrogram** untuk analisis sinyal.
 # --- FUNGSI UTAMA ---
 def extract_features(file_path):
     try:
-        # Load audio (sama seperti saat training)
+        # Load audio
         audio, sample_rate = librosa.load(file_path, res_type='kaiser_fast', duration=3)
         mfccs = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
         mfccs_processed = np.mean(mfccs.T, axis=0)
